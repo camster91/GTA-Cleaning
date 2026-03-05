@@ -49,7 +49,7 @@ const MeetTheOwner = () => {
                 <div className="owner-image-section">
                     <div className="owner-image-wrapper">
                         <img
-                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=600&q=80"
+                            src="/images/placeholder_founder.jpg"
                             alt="Danny Gil - Founder of GTA City Cleaning Services"
                             loading="lazy"
                             decoding="async"
