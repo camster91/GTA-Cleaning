@@ -1,16 +1,41 @@
 .owner-section {
     background-color: var(--dark-bg);
     padding: 8rem 2rem;
-    background-image: radial-gradient(circle at 10% 20%, rgba(20, 184, 166, 0.05) 0%, transparent 40%);
+    position: relative;
+    overflow: hidden;
+}
+
+.owner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.owner-section::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: -200px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(45, 212, 191, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
 }
 
 .owner-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: start;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 /* Left Column - Content */
@@ -18,61 +43,100 @@
     color: var(--white);
 }
 
+.owner-content .hero-subtitle {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(45, 212, 191, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(45, 212, 191, 0.2);
+}
+
 .owner-content h2 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
     color: var(--white);
     font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
 .owner-role {
     font-size: 1.25rem;
     color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
 .owner-description {
-    font-size: 1.1rem;
-    color: #94A3B8;
+    font-size: 1.125rem;
+    color: #CBD5E1;
     margin-bottom: 1.5rem;
     line-height: 1.8;
+    max-width: 95%;
 }
 
 /* Highlights Grid */
 .owner-highlights {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-top: 2.5rem;
+    gap: 1.25rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .highlight-item {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: transform 0.2s, background-color 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 .highlight-item:hover {
-    transform: translateY(-2px);
-    background-color: rgba(255, 255, 255, 0.06);
+    transform: translateY(-4px);
+    border-color: rgba(45, 212, 191, 0.3);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-item:hover::before {
+    opacity: 1;
 }
 
 .highlight-icon {
     width: 48px;
     height: 48px;
-    background-color: var(--primary-color);
-    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--dark-bg);
     flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(45, 212, 191, 0.3);
 }
 
 .highlight-text {
@@ -81,27 +145,32 @@
 }
 
 .highlight-value {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--white);
+    margin-bottom: 0.25rem;
 }
 
 .highlight-label {
     font-size: 0.875rem;
     color: #94A3B8;
+    font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
 /* Right Column - Image & Quote */
 .owner-image-section {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .owner-image-wrapper {
     position: relative;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 .owner-image-wrapper img {
@@ -110,6 +179,29 @@
     display: block;
     aspect-ratio: 4/5;
     object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.owner-image-wrapper:hover img {
+    transform: scale(1.03);
+}
+
+.owner-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, transparent, rgba(45, 212, 191, 0.2), transparent);
+    border-radius: 24px;
+    z-index: -1;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .owner-image-accent {
@@ -118,47 +210,94 @@
     right: -20px;
     width: 150px;
     height: 150px;
-    background-color: var(--primary-color);
-    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    border-radius: 20px;
     z-index: -1;
-    opacity: 0.3;
+    opacity: 0.2;
+    filter: blur(10px);
 }
 
 .owner-quote {
-    background-color: rgba(255, 255, 255, 0.03);
-    border-left: 4px solid var(--primary-color);
-    padding: 1.5rem 2rem;
-    border-radius: 0 12px 12px 0;
+    background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(45, 212, 191, 0.05));
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(45, 212, 191, 0.15);
+}
+
+.owner-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--primary-hover));
 }
 
 .owner-quote blockquote {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: var(--white);
     font-style: italic;
     margin-bottom: 1rem;
     line-height: 1.6;
+    position: relative;
+    font-weight: 500;
+}
+
+.owner-quote blockquote::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: -15px;
+    font-size: 3rem;
+    color: var(--primary-color);
+    opacity: 0.3;
+    font-family: Georgia, serif;
 }
 
 .owner-quote cite {
-    font-size: 0.95rem;
-    color: #94A3B8;
+    font-size: 1rem;
+    color: #CBD5E1;
     font-style: normal;
     font-weight: 500;
+    display: block;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.owner-quote cite::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
 }
 
 /* Desktop Layout */
 @media (min-width: 992px) {
     .owner-container {
-        grid-template-columns: 1.2fr 1fr;
+        grid-template-columns: 1.1fr 1fr;
         gap: 6rem;
+        align-items: center;
     }
 
     .owner-content h2 {
         font-size: 3.5rem;
     }
 
-    .owner-image-wrapper img {
-        max-height: 500px;
+    .owner-description {
+        font-size: 1.15rem;
+    }
+
+    .owner-highlights {
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 3.5rem;
     }
 }
 
@@ -167,15 +306,15 @@
         gap: 8rem;
     }
 
-    .owner-highlights {
-        grid-template-columns: repeat(4, 1fr);
+    .owner-content h2 {
+        font-size: 4rem;
     }
 }
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .owner-section {
-        padding: 4rem 1.5rem;
+        padding: 5rem 1.5rem;
     }
 
     .owner-content h2 {
@@ -188,12 +327,16 @@
     }
 
     .highlight-item {
-        padding: 0.875rem;
+        padding: 1.25rem;
     }
 
     .highlight-icon {
         width: 40px;
         height: 40px;
+    }
+
+    .highlight-value {
+        font-size: 1.25rem;
     }
 
     .owner-image-accent {
@@ -204,6 +347,16 @@
     }
 
     .owner-quote {
-        padding: 1.25rem;
+        padding: 1.5rem;
+    }
+
+    .owner-quote blockquote {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .owner-highlights {
+        grid-template-columns: 1fr;
     }
 }
