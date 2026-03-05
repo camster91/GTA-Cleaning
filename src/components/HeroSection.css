@@ -1,0 +1,158 @@
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--dark-bg);
+}
+
+.hero-split {
+    flex: 1;
+    display: flex;
+}
+
+.left-panel {
+    padding: 10rem 2rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #030d14;
+    /* very dark cyan/navy */
+    background-image: repeating-linear-gradient(-45deg,
+            rgba(255, 255, 255, 0.015),
+            rgba(255, 255, 255, 0.015) 1px,
+            transparent 1px,
+            transparent 40px);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 640px;
+    color: var(--white);
+}
+
+.hero-subtitle {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.hero-heading {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #94A3B8;
+    margin-bottom: 3rem;
+    max-width: 90%;
+    line-height: 1.7;
+}
+
+.hero-btn {
+    margin-bottom: 4rem;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+}
+
+.hero-badges {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 4rem;
+}
+
+.badge {
+    display: flex;
+    flex-direction: column;
+}
+
+.badge strong {
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-family: var(--font-main);
+    line-height: 1.2;
+}
+
+.badge span {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 0.75rem;
+}
+
+/* Right Panel - Image Area */
+.right-panel {
+    position: relative;
+    min-height: 500px;
+}
+
+/* Use an actual img instead of background for better aspect ratio control if preferred, but background-size cover is cleaner */
+.hero-image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/hero_floor.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Optional Overlay if image is too bright */
+.hero-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 0) 20%);
+    z-index: 1;
+}
+
+/* Desktop Layout */
+@media (min-width: 992px) {
+    .hero-section {
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    .hero-split {
+        width: 50%;
+    }
+
+    .left-panel {
+        padding: 8rem 4rem;
+        justify-content: flex-end;
+    }
+
+    .hero-content {
+        margin-right: 2rem;
+    }
+
+    .hero-heading {
+        font-size: 4.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.25rem;
+    }
+
+    .hero-badges {
+        flex-wrap: nowrap;
+        gap: 4rem;
+    }
+}

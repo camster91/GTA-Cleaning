@@ -1,0 +1,151 @@
+.global-footer {
+    background-color: var(--dark-bg);
+    color: var(--white);
+    padding-top: 6rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 0 0 4rem;
+    /* Removed horizontal padding to use container's */
+}
+
+/* Logo */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    margin-bottom: 2rem;
+}
+
+.footer-logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-desc {
+    color: #94A3B8;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+/* Links Grid - 4 columns */
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    width: 100%;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col li {
+    color: #94A3B8;
+    font-size: 0.95rem;
+}
+
+.footer-col li a {
+    transition: color var(--transition-speed);
+}
+
+.footer-col li a:hover {
+    color: var(--primary-color);
+}
+
+/* Footer Bottom with pattern & circles */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem 0;
+    color: #64748B;
+    font-size: 0.85rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-bottom-pattern {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.footer-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer-circle-1 {
+    width: 300px;
+    height: 300px;
+    bottom: -150px;
+    left: -50px;
+}
+
+.footer-circle-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -80px;
+    right: 10%;
+}
+
+.footer-circle-3 {
+    width: 400px;
+    height: 400px;
+    bottom: -250px;
+    right: -100px;
+}
+
+.bottom-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .footer-links-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-content {
+        padding: 0 0 4rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-links-grid {
+        width: auto;
+        gap: 6rem;
+        /* Increased gap for a more expansive feel */
+    }
+}

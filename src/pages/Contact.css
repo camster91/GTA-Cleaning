@@ -1,0 +1,150 @@
+/* CONTACT PAGE SPECIFIC CSS */
+
+.contact-page {
+    /* bg-pattern is applied from index.css */
+    min-height: 100vh;
+    padding: 12rem 0 8rem;
+    /* Padding for header overlap */
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    max-width: 1200px;
+    /* Wider container */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+/* Hero Content */
+.contact-hero {
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 4rem;
+    max-width: 800px;
+}
+
+.contact-hero .hero-badge {
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.contact-hero .hero-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.contact-hero .hero-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Form Card */
+.contact-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #E2E8F0;
+    border-radius: 4px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--text-heading);
+    background-color: transparent;
+    transition: border-color var(--transition-speed);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--dark-bg);
+}
+
+.form-group input::placeholder,
+.form-group select::placeholder,
+.form-group textarea::placeholder {
+    color: #94A3B8;
+}
+
+/* Custom Select styling to hide default arrow and use a cleaner one if needed, relying on default for simplicity but making it clean */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.select-wrapper::after {
+    content: '\25BC';
+    font-size: 0.7rem;
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--text-heading);
+}
+
+.submit-btn {
+    align-self: flex-start;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .contact-hero .hero-title {
+        font-size: 2.5rem;
+    }
+}

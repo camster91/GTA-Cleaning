@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Home Page -->
+    <url>
+        <loc>https://gtacitycleaning.com/</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://gtacitycleaning.com/og-image.png</image:loc>
+            <image:title>GTA City Cleaning Services</image:title>
+        </image:image>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>https://gtacitycleaning.com/about</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Services Overview Page -->
+    <url>
+        <loc>https://gtacitycleaning.com/services</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Office Cleaning Landing Page -->
+    <url>
+        <loc>https://gtacitycleaning.com/services/office-cleaning</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1497366216548-37526070297c</image:loc>
+            <image:title>Office Cleaning Toronto</image:title>
+        </image:image>
+    </url>
+
+    <!-- Post-Construction Cleaning Landing Page -->
+    <url>
+        <loc>https://gtacitycleaning.com/services/post-construction-cleaning</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1504307651254-35680f356dfd</image:loc>
+            <image:title>Post Construction Cleaning Toronto</image:title>
+        </image:image>
+    </url>
+
+    <!-- Floor Maintenance Landing Page -->
+    <url>
+        <loc>https://gtacitycleaning.com/services/floor-maintenance</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1558317374-067fb5f30001</image:loc>
+            <image:title>Floor Stripping and Waxing Toronto</image:title>
+        </image:image>
+    </url>
+
+    <!-- Medical Facility Cleaning Landing Page -->
+    <url>
+        <loc>https://gtacitycleaning.com/services/medical-facility-cleaning</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d</image:loc>
+            <image:title>Medical Facility Cleaning Toronto</image:title>
+        </image:image>
+    </url>
+
+    <!-- Retail Cleaning Landing Page -->
+    <url>
+        <loc>https://gtacitycleaning.com/services/retail-cleaning</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1441986300917-64674bd600d8</image:loc>
+            <image:title>Retail Store Cleaning Toronto</image:title>
+        </image:image>
+    </url>
+
+    <!-- Contact Page -->
+    <url>
+        <loc>https://gtacitycleaning.com/contact</loc>
+        <lastmod>2026-03-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>

@@ -1,0 +1,19 @@
+/* App specific styles */
+.skip-link {
+   position: absolute;
+   top: -40px;
+   left: 0;
+   background: var(--dark-bg);
+   color: var(--white);
+   padding: 8px;
+   z-index: 2000;
+   transition: top 0.3s;
+}
+
+.skip-link:focus {
+   top: 0;
+}
+
+main:focus {
+   outline: none;
+}

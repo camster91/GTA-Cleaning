@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://gtacitycleaning.com/sitemap.xml
+
+# Crawl rate
+Crawl-delay: 10
+
+# Disallow admin or private areas if any
+# Disallow: /admin/
+# Disallow: /private/
