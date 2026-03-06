@@ -6,6 +6,6 @@
     </linearGradient>
   </defs>
   <rect width="100" height="100" rx="16" fill="url(#bg)"/>
-  <text x="50" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" fill="white" text-anchor="middle">G</text>
+  <text x="50" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" fill="white" text-anchor="middle">GTA</text>
   <path d="M35 25 Q50 10 65 25" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
 </svg>

@@ -9,7 +9,7 @@ const GlobalFooter = () => {
                 <div className="footer-brand">
                     <Link to="/" className="footer-logo">
                         <div className="logo-img-wrapper">
-                            <img src="/images/gta_logo.jpg" alt="GTA Cleaning Logo" className="header-logo-img" />
+                            <img src="/images/gta_logo.png" alt="GTA Cleaning Logo" className="header-logo-img" />
                         </div>
                         <span className="footer-logo-text">GTA CITY CLEANING</span>
                     </Link>

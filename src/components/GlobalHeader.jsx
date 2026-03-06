@@ -23,7 +23,7 @@ const GlobalHeader = () => {
                 <div className="logo-container">
                     <Link to="/" className="logo-text" style={{ flexDirection: 'row', gap: '8px', alignItems: 'center' }}>
                         <div className="logo-img-wrapper">
-                            <img src="/images/gta_logo.jpg" alt="GTA Cleaning Logo" className="header-logo-img" />
+                            <img src="/images/gta_logo.png" alt="GTA Cleaning Logo" className="header-logo-img" />
                         </div>
                         <span className="logo-brand-text">GTA City Cleaning Services Inc</span>
                     </Link>
