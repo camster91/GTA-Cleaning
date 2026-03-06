@@ -34,7 +34,7 @@ echo "📋 Copying production files..."
 cp package.json dist/
 cp package-lock.json dist/ 2>/dev/null || true
 cp server.js dist/
-cp .env dist/ 2>/dev/null || true
+# cp .env dist/ 2>/dev/null || true   # Environment variables should be set in hosting panel
 cp .htaccess dist/ 2>/dev/null || true
 
 echo ""

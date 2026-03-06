@@ -5,7 +5,7 @@ Professional commercial cleaning company website for the Greater Toronto Area. B
 ## Features
 
 - ✅ **SEO Optimized**: React Helmet, Open Graph, JSON-LD structured data
-- ✅ **Contact Forms**: Mailgun API integration for lead capture
+- ✅ **Contact Forms**: SMTP email integration for lead capture
 - ✅ **Responsive Design**: Mobile-first, works on all devices
 - ✅ **Smooth Animations**: Scroll-triggered reveals, smooth anchor scrolling
 - ✅ **Accessibility**: ARIA labels, skip links, keyboard navigation
@@ -16,7 +16,7 @@ Professional commercial cleaning company website for the Greater Toronto Area. B
 ## Tech Stack
 
 - **Frontend**: React 19 + React Router DOM + Vite
-- **Backend**: Express.js + Mailgun
+- **Backend**: Express.js + Nodemailer (SMTP)
 - **Styling**: CSS Modules + Custom properties
 - **SEO**: React Helmet Async + JSON-LD
 - **Icons**: Lucide React
@@ -46,9 +46,18 @@ npm start
 Create `.env` file:
 
 ```env
-MAILGUN_API_KEY=your_key_here
-MAILGUN_DOMAIN=mg.yourdomain.com
-NOTIFY_EMAIL=info@yourdomain.com
+# SMTP Configuration for Titan Email
+SMTP_HOST=smtp.titan.email
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=contact@gtacitycleaningservices.ca
+SMTP_PASS=your_titan_password
+
+# Email addresses
+FROM_EMAIL=contact@gtacitycleaningservices.ca
+NOTIFY_EMAIL=contact@gtacitycleaningservices.ca
+
+# Server Configuration
 PORT=3000
 NODE_ENV=production
 ```
@@ -73,7 +82,7 @@ npm run deploy:build
 │   ├── hooks/           # Custom React hooks
 │   ├── App.jsx          # Main app with routing
 │   └── main.jsx         # Entry point
-├── server.js            # Express server with Mailgun API
+├── server.js            # Express server with SMTP email
 ├── deploy.sh            # Deployment script
 └── .htaccess            # Apache config for SPA routing
 ```
@@ -91,7 +100,7 @@ npm run deploy:build
 
 ## Contact Form
 
-Forms submit to `/api/contact` endpoint which sends email via Mailgun. Includes:
+Forms submit to `/api/contact` endpoint which sends email via SMTP (Titan Email). Includes:
 - Client-side validation
 - Server-side validation
 - Success/error states
