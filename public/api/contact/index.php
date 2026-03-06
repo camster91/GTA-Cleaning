@@ -16,14 +16,30 @@ require 'PHPMailer/src/SMTP.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+// Load environment variables from .env file if exists
+$env_path = __DIR__ . '/../../.builds/config/.env';
+$env = [];
+if (file_exists($env_path)) {
+    $lines = file($env_path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos(trim($line), '#') === 0) continue;
+        if (strpos($line, '=') !== false) {
+            list($key, $value) = explode('=', $line, 2);
+            $key = trim($key);
+            $value = trim($value, " '\"");
+            $env[$key] = $value;
+        }
+    }
+}
+
 // Get environment variables
-$smtp_host = getenv('SMTP_HOST') ?: 'smtp.titan.email';
-$smtp_port = getenv('SMTP_PORT') ?: 465;
-$smtp_secure = getenv('SMTP_SECURE') ?: true;
-$smtp_user = getenv('SMTP_USER') ?: '';
-$smtp_pass = getenv('SMTP_PASS') ?: '';
-$from_email = getenv('FROM_EMAIL') ?: $smtp_user;
-$notify_email = getenv('NOTIFY_EMAIL') ?: $from_email;
+$smtp_host = $env['SMTP_HOST'] ?? getenv('SMTP_HOST') ?: 'smtp.titan.email';
+$smtp_port = $env['SMTP_PORT'] ?? getenv('SMTP_PORT') ?: 465;
+$smtp_secure = $env['SMTP_SECURE'] ?? getenv('SMTP_SECURE') ?: true;
+$smtp_user = $env['SMTP_USER'] ?? getenv('SMTP_USER') ?: '';
+$smtp_pass = $env['SMTP_PASS'] ?? getenv('SMTP_PASS') ?: '';
+$from_email = $env['FROM_EMAIL'] ?? getenv('FROM_EMAIL') ?: $smtp_user;
+$notify_email = $env['NOTIFY_EMAIL'] ?? getenv('NOTIFY_EMAIL') ?: $from_email;
 
 $input = json_decode(file_get_contents('php://input'), true);
 

@@ -40,10 +40,25 @@ const ContactSection = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             });
-            if (!res.ok) throw new Error('Server error');
+            
+            const data = await res.json();
+            
+            if (!res.ok) {
+                // Handle validation errors (400)
+                if (res.status === 400 && data.errors) {
+                    setErrors(data.errors);
+                    setStatus('idle');
+                } else {
+                    // Handle server errors (500) or other errors
+                    throw new Error(data.error || 'Server error');
+                }
+                return;
+            }
+            
             setStatus('success');
             setFormData({ name: '', email: '', phone: '', propertyType: 'office', frequency: 'daily', message: '' });
-        } catch {
+        } catch (err) {
+            console.error('Form submission error:', err);
             setStatus('error');
         }
     };
