@@ -17,6 +17,7 @@
     RewriteRule ^ - [L]
     
     # API routes should not be rewritten
+    RewriteRule ^api/contact/?$ api/contact/index.php [L]
     RewriteRule ^api/ - [L]
     
     # Everything else goes to index.html for SPA
