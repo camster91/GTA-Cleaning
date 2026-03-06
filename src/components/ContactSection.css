@@ -1,7 +1,7 @@
 /* Contact Section - Mobile First */
 .contact-section {
     background-color: var(--light-bg);
-    padding: 4rem 1rem;
+    padding: 3rem 0.75rem;
 }
 
 .contact-container {
@@ -10,6 +10,7 @@
     gap: 2rem;
     max-width: 1280px;
     margin: 0 auto;
+    width: 100%;
 }
 
 /* Left Column - Content */
@@ -91,9 +92,9 @@
 /* Right Column - Form */
 .form-container {
     background-color: var(--white);
-    padding: 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     border: 1px solid #e2e8f0;
     width: 100%;
 }
@@ -214,7 +215,7 @@
    ============================================ */
 @media (min-width: 768px) {
     .contact-section {
-        padding: 6rem 2rem;
+        padding: 5rem 1.5rem;
     }
     
     .contact-info-grid {
@@ -231,7 +232,7 @@
     }
     
     .form-container {
-        padding: 2rem;
+        padding: 1.75rem;
     }
 }
 
@@ -240,13 +241,13 @@
    ============================================ */
 @media (min-width: 900px) {
     .contact-section {
-        padding: 8rem 2rem !important;
+        padding: 7rem 2rem !important;
     }
     
     .contact-container {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
-        gap: 4rem !important;
+        gap: 3.5rem !important;
     }
     
     .contact-content {
@@ -259,7 +260,7 @@
     }
     
     .form-container {
-        padding: 2.5rem !important;
+        padding: 2.25rem !important;
     }
     
     .form-header h3 {
@@ -272,10 +273,10 @@
    ============================================ */
 @media (min-width: 1200px) {
     .contact-container {
-        gap: 6rem;
+        gap: 5rem;
     }
     
     .form-container {
-        padding: 3rem;
+        padding: 2.75rem;
     }
 }
