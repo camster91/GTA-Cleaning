@@ -27,6 +27,9 @@ const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/legal/TermsOfService'));
 const Accessibility = lazy(() => import('./pages/legal/Accessibility'));
 
+// Locations
+const LocationPage = lazy(() => import('./pages/locations/LocationPage'));
+
 import StickyCTA from './components/StickyCTA';
 import Chatbot from './components/Chatbot';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -56,6 +59,11 @@ function App() {
                 <Route path="/legal/privacy" element={<PrivacyPolicy />} />
                 <Route path="/legal/terms" element={<TermsOfService />} />
                 <Route path="/legal/accessibility" element={<Accessibility />} />
+                <Route path="/locations/toronto" element={<LocationPage city="Toronto" />} />
+                <Route path="/locations/mississauga" element={<LocationPage city="Mississauga" />} />
+                <Route path="/locations/bradford" element={<LocationPage city="Bradford" />} />
+                <Route path="/locations/north-york" element={<LocationPage city="North York" />} />
+                <Route path="/locations/scarborough" element={<LocationPage city="Scarborough" />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

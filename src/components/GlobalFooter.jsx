@@ -43,12 +43,13 @@ const GlobalFooter = () => {
                     </div>
 
                     <div className="footer-col">
-                        <h4>Support</h4>
+                        <h4>Service Areas</h4>
                         <ul>
-                            <li><Link to="/contact">Request a Quote</Link></li>
-                            <li><Link to="/contact">Schedule Service</Link></li>
-                            <li><Link to="/about">Our Process</Link></li>
-                            <li><Link to="/about">FAQ</Link></li>
+                            <li><Link to="/locations/toronto">Toronto</Link></li>
+                            <li><Link to="/locations/mississauga">Mississauga</Link></li>
+                            <li><Link to="/locations/bradford">Bradford</Link></li>
+                            <li><Link to="/locations/north-york">North York</Link></li>
+                            <li><Link to="/locations/scarborough">Scarborough</Link></li>
                         </ul>
                     </div>
 
