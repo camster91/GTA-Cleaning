@@ -166,7 +166,10 @@ const Contact = () => {
                     )}
                 </div>
 
-                <div className="contact-map animate-fade-in" style={{ animationDelay: '0.4s', width: '100%', maxWidth: '1200px' }}>
+            </div>
+
+            <div className="container" style={{ marginTop: '4rem', paddingBottom: '4rem' }}>
+                <div className="contact-map animate-fade-in" style={{ animationDelay: '0.4s', width: '100%' }}>
                     <iframe
                         title="GTA City Cleaning Service Area"
                         src="https://www.openstreetmap.org/export/embed.html?bbox=-80.12,43.43,-79.13,43.95&amp;layer=mapnik"
@@ -180,7 +183,6 @@ const Contact = () => {
                         <a href="https://www.openstreetmap.org/?mlat=43.65&mlon=-79.38#map=10/43.65/-79.38" target="_blank" rel="noopener noreferrer">View Larger Map</a>
                     </p>
                 </div>
-
             </div>
         </div>
     );
