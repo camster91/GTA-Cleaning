@@ -45,7 +45,6 @@ function App() {
                 <Route path="/services/floor-maintenance" element={<FloorMaintenance />} />
                 <Route path="/services/residential-cleaning" element={<ResidentialCleaning />} />
                 <Route path="/services/retail-cleaning" element={<RetailCleaning />} />
-                <Route path="/blog" element={<Blog />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>

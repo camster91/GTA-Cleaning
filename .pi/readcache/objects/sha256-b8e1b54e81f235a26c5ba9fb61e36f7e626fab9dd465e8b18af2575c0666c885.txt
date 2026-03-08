@@ -169,16 +169,14 @@ const Contact = () => {
                 <div className="contact-map animate-fade-in" style={{ animationDelay: '0.4s', width: '100%', maxWidth: '1200px' }}>
                     <iframe
                         title="GTA City Cleaning Service Area"
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=-80.12,43.43,-79.13,43.95&amp;layer=mapnik"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d369354.7511982637!2d-79.74951468692994!3d43.71812270908498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
                         width="100%"
                         height="400"
                         style={{ border: 0, borderRadius: '12px' }}
                         allowFullScreen=""
                         loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
-                    <p style={{ marginTop: '0.5rem', textAlign: 'center' }}>
-                        <a href="https://www.openstreetmap.org/?mlat=43.65&mlon=-79.38#map=10/43.65/-79.38" target="_blank" rel="noopener noreferrer">View Larger Map</a>
-                    </p>
                 </div>
 
             </div>

@@ -7,7 +7,8 @@ const MeetTheOwner = () => {
 
     const highlights = [
         { icon: Clock, label: 'Experience', value: '18+ Years' },
-        { icon: Award, label: 'Clients', value: '200+ Satisfied' },
+        { icon: Users, label: 'Team Size', value: '50+ Cleaners' },
+        { icon: Award, label: 'Clients', value: '200+ Active' },
         { icon: Shield, label: 'Guarantee', value: '100% Satisfaction' },
     ];
 
@@ -48,7 +49,7 @@ const MeetTheOwner = () => {
                 <div className="owner-image-section">
                     <div className="owner-image-wrapper">
                         <img
-                            src="/images/profile_founder.jpg"
+                            src="/images/placeholder_founder.jpg"
                             alt="Danny Gil - Founder of GTA City Cleaning Services"
                             loading="lazy"
                             decoding="async"

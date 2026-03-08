@@ -23,9 +23,9 @@ const Services = () => {
         },
         {
             icon: HeartPulse,
-            title: 'Residential Cleaning',
-            description: 'Professional residential cleaning services, specializing in preparing units for realtor showings or for tenants to move in.',
-            link: '/services/residential-cleaning'
+            title: 'Medical Clinics',
+            description: 'Strict sanitation protocols utilizing hospital-grade disinfectants to ensure the utmost safety for patients and healthcare providers.',
+            link: '/services/medical-facility-cleaning'
         },
         {
             icon: Factory,

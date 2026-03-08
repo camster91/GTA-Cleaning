@@ -109,7 +109,7 @@ const FloorMaintenance = () => {
                             <span className="subtitle">FLOOR TYPES</span>
                             <h2>We service all commercial flooring</h2>
                             <p className="lead">
-                                From VCT in office buildings to carpet in medical facilities,
+                                From VCT in office buildings to carpets in residential units,
                                 we have the expertise and equipment for every floor type.
                             </p>
                             <ul className="service-list two-col">
@@ -189,7 +189,7 @@ const FloorMaintenance = () => {
                     <div className="cta-card">
                         <div className="cta-content">
                             <h2>Restore your floors today</h2>
-                            <p>Contact us for a free assessment and quote. We service offices, retail spaces, medical facilities, and more.</p>
+                            <p>Contact us for a free assessment and quote. We service offices, retail spaces, residential units, and more.</p>
                             <div className="cta-buttons">
                                 <a href="tel:4160000000" className="btn btn-primary btn-lg">
                                     <Phone size={20} />

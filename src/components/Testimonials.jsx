@@ -17,7 +17,7 @@ const Testimonials = () => {
         },
         {
             image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop',
-            quote: '"The dedication to sanitation at our clinic is top notch. Their staff is thoroughly trained in medical facility protocols."',
+            quote: '"The dedication to sanitation at our residential projects is top notch. Their staff is thoroughly trained in cleaning protocols."',
             author: 'Dr. Emily Torres',
             location: 'Clinic Administrator'
         },

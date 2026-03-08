@@ -256,9 +256,9 @@ const OfficeCleaning = () => {
                             <p>Stripping, waxing & carpet cleaning services</p>
                             <ArrowRight size={20} />
                         </Link>
-                        <Link to="/services/residential-cleaning" className="related-card">
-                            <h3>Residential Cleaning</h3>
-                            <p>Move-in, move-out, and deep cleaning services</p>
+                        <Link to="/services/medical-facility-cleaning" className="related-card">
+                            <h3>Medical Facility Cleaning</h3>
+                            <p>Specialized sanitation for healthcare spaces</p>
                             <ArrowRight size={20} />
                         </Link>
                     </div>

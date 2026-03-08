@@ -48,10 +48,10 @@ const About = () => {
                         </div>
                         <div className="story-content-col">
                             <p>
-                                Founded in 2007, GTA City Cleaning Services started with a simple promise: deliver the highest standard of commercial cleaning every single time. What began as a small operation serving local offices has grown into a full-service commercial cleaning company trusted by over 200 satisfied clients.
+                                Founded in 2007, GTA City Cleaning Services started with a simple promise: deliver the highest standard of commercial cleaning every single time. What began as a small operation serving local offices has grown into a full-service commercial cleaning company trusted by over 200 active clients.
                             </p>
                             <p>
-                                We specialize in office buildings, residential units, retail spaces, post-construction cleanup, and floor maintenance. Our team operates 24/7, ensuring your spaces are always pristine, safe, and ready for whatever comes next.
+                                We specialize in office buildings, medical facilities, retail spaces, post-construction cleanup, and floor maintenance. Our team operates 24/7, ensuring your business spaces are always pristine, safe, and ready for whatever comes next.
                             </p>
                             <Link to="/contact" className="btn btn-dark" style={{ marginTop: '1rem' }}>Get in touch</Link>
                         </div>

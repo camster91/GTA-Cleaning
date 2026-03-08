@@ -14,7 +14,7 @@ const GlobalFooter = () => {
                         <span className="footer-logo-text">GTA CITY CLEANING</span>
                     </Link>
                     <p className="footer-desc">
-                        Your trusted partner for cleaning across the GTA. Proudly serving Toronto, Mississauga, Bradford, North York, Scarborough, and surrounding areas with 18+ years of experience.
+                        Your trusted partner for commercial cleaning across the GTA. We're dedicated to keeping your workspace pristine and safe so you can focus on what matters.
                     </p>
                 </div>
 

@@ -21,9 +21,9 @@ const ServicesGrid = () => {
         },
         {
             icon: <HeartPulse size={24} />,
-            title: 'Residential Cleaning',
-            description: 'Professional residential cleaning services, specializing in preparing units for realtor showings or for tenants to move in.',
-            link: '/services/residential-cleaning'
+            title: 'Medical Facility Cleaning',
+            description: 'Hospital-grade disinfection for clinics and healthcare facilities. CDC-compliant protocols.',
+            link: '/services/medical-facility-cleaning'
         },
         {
             icon: <Factory size={24} />,

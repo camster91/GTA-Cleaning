@@ -188,7 +188,7 @@ const ContactSection = () => {
                                         <option value="office">Office</option>
                                         <option value="commercial">Commercial Building</option>
                                         <option value="retail">Retail Space</option>
-                                        <option value="residential">Residential Cleaning</option>
+                                        <option value="medical">Medical Facility</option>
                                     </select>
                                 </div>
 

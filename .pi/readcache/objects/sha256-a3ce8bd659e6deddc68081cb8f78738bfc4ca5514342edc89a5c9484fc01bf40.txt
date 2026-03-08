@@ -1,34 +1,17 @@
 import { Helmet } from 'react-helmet-async';
 
 const SITE_NAME = 'GTA City Cleaning Services';
-const BASE_URL = 'https://gtacitycleaningservices.com';
+const BASE_URL = 'https://gtacitycleaning.com';
 
 const SEO = ({
     title,
     description,
     path = '/',
     type = 'website',
-    image = '/logo.jpg',
+    image = '/og-image.png',
 }) => {
-    const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | Expert Cleaning 24/7`;
+    const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | Expert Commercial Cleaning 24/7`;
     const url = `${BASE_URL}${path}`;
-
-    const schema = {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": SITE_NAME,
-        "image": `${BASE_URL}${image}`,
-        "telephone": "647-901-1995",
-        "email": "GTACityCleaningServices@outlook.com",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Toronto",
-            "addressRegion": "ON",
-            "addressCountry": "CA"
-        },
-        "areaServed": "Greater Toronto Area",
-        "url": url
-    };
 
     return (
         <Helmet>
@@ -54,11 +37,6 @@ const SEO = ({
             {/* Geo */}
             <meta name="geo.region" content="CA-ON" />
             <meta name="geo.placename" content="Greater Toronto Area" />
-            
-            {/* Structured Data */}
-            <script type="application/ld+json">
-                {JSON.stringify(schema)}
-            </script>
         </Helmet>
     );
 };
