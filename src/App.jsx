@@ -7,13 +7,14 @@ import BackToTop from './components/BackToTop';
 import ScrollToTop from './components/ScrollToTop';
 import SmoothAnchor from './components/SmoothAnchor';
 
-const Home = lazy(() => import('./pages/Home'));
+// Import Home eagerly to avoid the loading blip
+import Home from './pages/Home';
+
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
-// Service Landing Pages - Lazy loaded
 const OfficeCleaning = lazy(() => import('./pages/services/OfficeCleaning'));
 const PostConstructionCleaning = lazy(() => import('./pages/services/PostConstructionCleaning'));
 const FloorMaintenance = lazy(() => import('./pages/services/FloorMaintenance'));
