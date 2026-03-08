@@ -9,7 +9,7 @@ const MidPageBanner = () => {
             <div className="container banner-text-container">
                 <span className="hero-subtitle" style={{ color: 'var(--white)' }}>EXPERTISE</span>
                 <h2>Fast, reliable, and premium commercial cleaning solutions.</h2>
-                <a href="#contact" className="btn btn-primary" style={{ marginTop: '1rem' }}>Book now</a>
+                <a href="/contact#contact-form" className="btn btn-primary" style={{ marginTop: '1rem' }}>Book now</a>
             </div>
 
             <div className="banner-full-image">

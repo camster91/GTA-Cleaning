@@ -14,7 +14,7 @@ const HeroSection = () => {
                     <p className="hero-description" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem', maxWidth: '600px' }}>
                         Professional commercial cleaning services across the Greater Toronto Area. 18+ years of excellence keeping businesses pristine.
                     </p>
-                    <a href="#contact" className="btn btn-primary hero-btn" style={{ borderRadius: '8px', padding: '0.8rem 2rem', fontWeight: '600' }}>
+                    <a href="/contact#contact-form" className="btn btn-primary hero-btn" style={{ borderRadius: '8px', padding: '0.8rem 2rem', fontWeight: '600' }}>
                         Contact us
                     </a>
 

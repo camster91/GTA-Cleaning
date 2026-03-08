@@ -82,7 +82,7 @@ const Contact = () => {
                     </p>
                 </div>
 
-                <div className="contact-card animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <div className="contact-card animate-fade-in" id="contact-form" style={{ animationDelay: '0.2s' }}>
                     {status === 'success' ? (
                         <div className="form-success">
                             <h3>Message sent!</h3>
