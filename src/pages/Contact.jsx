@@ -28,7 +28,7 @@ const Contact = () => {
                 <div className="contact-map animate-fade-in" style={{ animationDelay: '0.4s', width: '100%' }}>
                     <iframe
                         title="GTA City Cleaning Service Area"
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=-80.12,43.43,-79.13,43.95&amp;layer=mapnik"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-80.3,43.3,-79.1,44.2&amp;layer=mapnik"
                         width="100%"
                         height="300"
                         style={{ border: 0, borderRadius: '12px' }}
