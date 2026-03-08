@@ -20,8 +20,8 @@
     width: 180px;
     height: 70px;
     background-color: transparent;
-    border-radius: 8px;
-    padding: 8px;
+    border-radius: 0; /* Removed border radius */
+    padding: 0; /* Removed padding */
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -32,7 +32,7 @@
 .global-header.scrolled .logo-img-wrapper {
     width: 140px;
     height: 55px;
-    padding: 6px;
+    padding: 0; /* Removed padding */
 }
 
 .header-logo-img {
@@ -49,13 +49,13 @@
     .logo-img-wrapper {
         width: 140px;
         height: 55px;
-        padding: 6px;
+        padding: 0;
     }
     
     .global-header.scrolled .logo-img-wrapper {
         width: 120px;
         height: 45px;
-        padding: 4px;
+        padding: 0;
     }
 }
 
