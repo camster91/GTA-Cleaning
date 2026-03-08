@@ -55,9 +55,9 @@ const GlobalFooter = () => {
                     <div className="footer-col">
                         <h4>Legal</h4>
                         <ul>
-                            <li><Link to="/">Privacy Policy</Link></li>
-                            <li><Link to="/">Terms of Service</Link></li>
-                            <li><Link to="/">Accessibility</Link></li>
+                            <li><Link to="/legal/privacy">Privacy Policy</Link></li>
+                            <li><Link to="/legal/terms">Terms of Service</Link></li>
+                            <li><Link to="/legal/accessibility">Accessibility</Link></li>
                         </ul>
                     </div>
                 </div>

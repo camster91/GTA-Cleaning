@@ -22,6 +22,11 @@ const ResidentialCleaning = lazy(() => import('./pages/services/ResidentialClean
 const RetailCleaning = lazy(() => import('./pages/services/RetailCleaning'));
 const Blog = lazy(() => import('./pages/Blog'));
 
+// Legal Pages
+const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/legal/TermsOfService'));
+const Accessibility = lazy(() => import('./pages/legal/Accessibility'));
+
 import StickyCTA from './components/StickyCTA';
 import Chatbot from './components/Chatbot';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -48,6 +53,9 @@ function App() {
                 <Route path="/services/retail-cleaning" element={<RetailCleaning />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/legal/privacy" element={<PrivacyPolicy />} />
+                <Route path="/legal/terms" element={<TermsOfService />} />
+                <Route path="/legal/accessibility" element={<Accessibility />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
