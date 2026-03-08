@@ -34,13 +34,20 @@ const GlobalHeader = () => {
                     <ul className="nav-links">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/about">About us</Link></li>
-                        <li><Link to="/services">Services</Link></li>
+                        <li className="has-dropdown">
+                            <Link to="/services">Services</Link>
+                            <ul className="dropdown">
+                                <li><Link to="/services/office-cleaning">Office Cleaning</Link></li>
+                                <li><Link to="/services/post-construction-cleaning">Post-Construction</Link></li>
+                                <li><Link to="/services/floor-maintenance">Floor Maintenance</Link></li>
+                                <li><Link to="/services/residential-cleaning">Residential Cleaning</Link></li>
+                                <li><Link to="/services/retail-cleaning">Retail Cleaning</Link></li>
+                            </ul>
+                        </li>
                         <li><Link to="/contact">Contact</Link></li>
                         <li className="nav-phone"><a href="tel:6479011995" style={{ color: 'var(--primary-color)', fontWeight: '700' }}>647-901-1995</a></li>
                     </ul>
                 </nav>
-
-                {/* Nav pushed to right by space-between now that CTA is removed */}
 
                 {/* Mobile menu toggle */}
                 <button
@@ -58,6 +65,11 @@ const GlobalHeader = () => {
                     <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
                     <li><Link to="/about" onClick={() => setMobileMenuOpen(false)}>About us</Link></li>
                     <li><Link to="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link></li>
+                    <li><Link to="/services/office-cleaning" onClick={() => setMobileMenuOpen(false)}>Office Cleaning</Link></li>
+                    <li><Link to="/services/post-construction-cleaning" onClick={() => setMobileMenuOpen(false)}>Post-Construction</Link></li>
+                    <li><Link to="/services/floor-maintenance" onClick={() => setMobileMenuOpen(false)}>Floor Maintenance</Link></li>
+                    <li><Link to="/services/residential-cleaning" onClick={() => setMobileMenuOpen(false)}>Residential Cleaning</Link></li>
+                    <li><Link to="/services/retail-cleaning" onClick={() => setMobileMenuOpen(false)}>Retail Cleaning</Link></li>
                     <li><Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
                 </ul>
             </div>
