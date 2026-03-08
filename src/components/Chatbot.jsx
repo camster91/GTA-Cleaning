@@ -3,15 +3,15 @@ import { MessageSquare, X, Send } from 'lucide-react';
 import './Chatbot.css';
 
 const FAQ = {
-  quote: "I can help you get a quote! Please tell me your property type (residential/commercial) and a bit about the cleaning needed.",
-  services: "We offer Residential, Office, Retail, Floor Maintenance, and Post-Construction cleaning.",
-  default: "I'm not sure about that. Would you like to talk to a human? Just say 'talk to human' and I'll send an email for you."
+  quote: "I'd love to help! Please tell me a bit about your property (residential/commercial) and the cleaning you need, and I'll get that quote started.",
+  services: "We handle Residential, Office, Retail, Floor Maintenance, and Post-Construction jobs. Which one are you looking for?",
+  default: "I might need to jump in on that one personally. Would you like me to send a note to my team? Just say 'send email' and I'll make sure we get back to you."
 };
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { text: "Hi! I'm the GTA Cleaning Assistant. To get started, what is your email address?", sender: 'bot' }
+    { text: "Hi! I'm Danny from GTA City Cleaning. What's the best email to reach you at?", sender: 'bot' }
   ]);
   const [input, setInput] = useState('');
   const [email, setEmail] = useState('');
@@ -32,7 +32,7 @@ const Chatbot = () => {
     if (step === 'email') {
       setEmail(input);
       setStep('options');
-      setMessages([...newMessages, { text: "Thanks! How can I help you today? (Type: Quote, Services, or Talk to human)", sender: 'bot' }]);
+      setMessages([...newMessages, { text: "Nice to meet you! How can I help you out? (Type: Quote, Services, or Send email)", sender: 'bot' }]);
     } else if (step === 'options') {
       if (input.toLowerCase().includes('quote')) {
         setStep('details');
@@ -42,7 +42,7 @@ const Chatbot = () => {
       } else {
         setMessages([...newMessages, { text: FAQ.default, sender: 'bot' }]);
       }
-    } else if (step === 'details') {
+    } else if (step === 'details' || input.toLowerCase().includes('send email')) {
       // Send the lead via existing contact API
       try {
         await fetch('/api/contact', {
@@ -50,10 +50,10 @@ const Chatbot = () => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name: 'Chatbot User', email, message: input, service: 'Chatbot Lead' })
         });
-        setMessages([...newMessages, { text: "Got it! I've sent your request to our team. We'll be in touch soon.", sender: 'bot' }]);
+        setMessages([...newMessages, { text: "Got it! I've personally received your request and will follow up with you shortly.", sender: 'bot' }]);
         setStep('options');
       } catch (err) {
-        setMessages([...newMessages, { text: "Sorry, I had trouble sending that. Please try calling us!", sender: 'bot' }]);
+        setMessages([...newMessages, { text: "I'm having a technical glitch. Could you call me directly at 647-901-1995?", sender: 'bot' }]);
       }
     }
   };
@@ -66,7 +66,7 @@ const Chatbot = () => {
       {isOpen && (
         <div className="chat-window glass-morphism">
           <div className="chat-header">
-            <h4>GTA Cleaning Support</h4>
+            <h4>Chat with Danny</h4>
             <button onClick={() => setIsOpen(false)}><X size={18} /></button>
           </div>
           <div className="chat-messages">
@@ -74,7 +74,7 @@ const Chatbot = () => {
             <div ref={messagesEndRef} />
           </div>
           <div className="chat-input">
-            <input value={input} onChange={(e) => setInput(e.target.value)} onKeyPress={(e) => e.key === 'Enter' && handleSend()} placeholder="Type a message..." />
+            <input value={input} onChange={(e) => setInput(e.target.value)} onKeyPress={(e) => e.key === 'Enter' && handleSend()} placeholder="Type your response..." />
             <button onClick={handleSend}><Send size={18} /></button>
           </div>
         </div>
