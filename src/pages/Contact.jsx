@@ -174,7 +174,7 @@ const Contact = () => {
                         title="GTA City Cleaning Service Area"
                         src="https://www.openstreetmap.org/export/embed.html?bbox=-80.12,43.43,-79.13,43.95&amp;layer=mapnik"
                         width="100%"
-                        height="400"
+                        height="300"
                         style={{ border: 0, borderRadius: '12px' }}
                         allowFullScreen=""
                         loading="lazy"
