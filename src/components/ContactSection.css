@@ -176,6 +176,24 @@
     border-radius: 8px;
 }
 
+.guarantee-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(45, 212, 166, 0.1);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    color: var(--text-heading);
+    font-weight: 600;
+}
+
+.guarantee-badge svg {
+    color: var(--primary-color);
+}
+
+
 /* Success State */
 .form-success {
     text-align: center;

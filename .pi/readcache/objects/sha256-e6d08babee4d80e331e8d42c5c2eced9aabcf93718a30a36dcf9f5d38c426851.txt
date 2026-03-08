@@ -153,26 +153,14 @@
 .mobile-nav-links {
     display: flex;
     flex-direction: column;
-    gap: 0; /* Removing gap to rely on padding for touch targets */
+    gap: 2rem;
     text-align: center;
-    width: 100%;
-}
-
-.mobile-nav-links li {
-    width: 100%;
 }
 
 .mobile-nav-links a {
-    display: block;
-    padding: 1.5rem;
     color: var(--text-heading);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    transition: background-color 0.2s;
-}
-
-.mobile-nav-links a:hover, .mobile-nav-links a:active {
-    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .mobile-btn {
