@@ -3,7 +3,7 @@ import { useState } from 'react';
 const ContactForm = () => {
     const [step, setStep] = useState(1);
     const [formData, setFormData] = useState({
-        name: '', email: '', phone: '', service: '', size: '', message: ''
+        name: '', companyName: '', email: '', phone: '', service: '', propertyType: 'office', frequency: 'daily', size: '', message: ''
     });
     const [errors, setErrors] = useState({});
     const [status, setStatus] = useState('idle');
@@ -54,7 +54,7 @@ const ContactForm = () => {
             }
             
             setStatus('success');
-            setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+            setFormData({ name: '', companyName: '', email: '', phone: '', service: '', propertyType: 'office', frequency: 'daily', size: '', message: '' });
         } catch (err) {
             console.error('Form submission error:', err);
             setStatus('error');
@@ -79,6 +79,11 @@ const ContactForm = () => {
                                 <input type="text" id="name" placeholder="Your name" value={formData.name} onChange={handleChange} aria-invalid={!!errors.name} />
                                 {errors.name && <span className="field-error">{errors.name}</span>}
                             </div>
+                            
+                            <div className="form-group">
+                                <label htmlFor="companyName">Company Name (Optional)</label>
+                                <input type="text" id="companyName" placeholder="Your company name" value={formData.companyName} onChange={handleChange} />
+                            </div>
 
                             <div className="form-group">
                                 <label htmlFor="email">Email Address</label>
@@ -92,6 +97,12 @@ const ContactForm = () => {
                                 {errors.phone && <span className="field-error">{errors.phone}</span>}
                             </div>
 
+                            <button type="button" className="btn btn-dark" onClick={() => setStep(2)}>Next</button>
+                        </>
+                    )}
+
+                    {step === 2 && (
+                        <>
                             <div className="form-group">
                                 <label htmlFor="service">Select Services</label>
                                 <div className="select-wrapper">
@@ -106,12 +117,32 @@ const ContactForm = () => {
                                 </div>
                                 {errors.service && <span className="field-error">{errors.service}</span>}
                             </div>
-                            <button type="button" className="btn btn-dark" onClick={() => setStep(2)}>Next</button>
-                        </>
-                    )}
+                            
+                            <div className="form-group">
+                                <label htmlFor="propertyType">Property Type</label>
+                                <div className="select-wrapper">
+                                    <select id="propertyType" value={formData.propertyType} onChange={handleChange}>
+                                        <option value="office">Office</option>
+                                        <option value="commercial">Commercial Building</option>
+                                        <option value="retail">Retail Space</option>
+                                        <option value="residential">Residential</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div className="form-group">
+                                <label htmlFor="frequency">Preferred Frequency</label>
+                                <div className="select-wrapper">
+                                    <select id="frequency" value={formData.frequency} onChange={handleChange}>
+                                        <option value="daily">Daily</option>
+                                        <option value="weekly">Weekly</option>
+                                        <option value="biweekly">Bi-Weekly</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="one-time">One-time / Deep Clean</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                    {step === 2 && (
-                        <>
                             <div className="form-group">
                                 <label htmlFor="size">Estimated Size (sq ft)</label>
                                 <div className="select-wrapper">

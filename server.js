@@ -58,6 +58,7 @@ app.post('/api/contact', async (req, res) => {
         `New contact form submission from GTA City Cleaning website:`,
         ``,
         `Name: ${name}`,
+        `Company Name: ${req.body.companyName || 'N/A'}`,
         hasEmail ? `Email: ${email}` : null,
         hasPhone ? `Phone: ${phone}` : null,
         service ? `Service: ${service}` : null,
