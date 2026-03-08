@@ -65,6 +65,10 @@ const Chatbot = () => {
       </button>
       {isOpen && (
         <div className="chat-window glass-morphism">
+          <div className="chat-header">
+            <h4>GTA Cleaning Support</h4>
+            <button onClick={() => setIsOpen(false)}><X size={18} /></button>
+          </div>
           <div className="chat-messages">
             {messages.map((m, i) => <div key={i} className={`message ${m.sender}`}>{m.text}</div>)}
             <div ref={messagesEndRef} />
