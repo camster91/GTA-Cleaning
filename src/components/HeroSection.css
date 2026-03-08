@@ -67,10 +67,10 @@
 .hero-badges {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 4rem;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 4rem;
+    padding-top: 2rem;
 }
 
 .badge {
@@ -80,7 +80,7 @@
 
 .badge strong {
     color: var(--white);
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 300;
     font-family: var(--font-main);
     line-height: 1.2;
@@ -153,6 +153,16 @@
 
     .hero-badges {
         flex-wrap: nowrap;
+        gap: 1.5rem;
+    }
+}
+@media (min-width: 992px) {
+    .hero-badges {
+        flex-wrap: nowrap;
         gap: 4rem;
+        padding-top: 4rem;
+    }
+    .badge strong {
+        font-size: 2.5rem;
     }
 }
