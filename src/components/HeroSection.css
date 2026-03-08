@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     background-color: var(--dark-bg);
-    padding-top: 100px; /* Account for fixed header */
+    padding-top: 140px; /* Increased from 100px to add more space below header */
 }
 
 .hero-container {
