@@ -55,26 +55,26 @@
 .contact-card {
     background-color: var(--white);
     border-radius: 8px;
-    padding: 3rem;
+    padding: 1.5rem; /* Reduced padding */
     width: 100%;
     max-width: 700px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0.75rem; /* Reduced gap */
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.25rem; /* Reduced gap */
 }
 
 .form-group label {
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* Slightly smaller label */
     font-weight: 600;
     color: var(--text-heading);
 }
@@ -83,15 +83,16 @@
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 1rem;
+    padding: 0.75rem; /* Reduced padding */
     border: 1px solid #E2E8F0;
     border-radius: 4px;
     font-family: var(--font-main);
-    font-size: 1rem;
+    font-size: 0.95rem; /* Slightly smaller font */
     color: var(--text-heading);
     background-color: transparent;
     transition: border-color var(--transition-speed);
 }
+
 
 .form-group input:focus,
 .form-group select:focus,
