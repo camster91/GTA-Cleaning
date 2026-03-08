@@ -156,19 +156,7 @@ button {
   text-align: center;
 }
 
-/* Diagonal Transition Utilities */
-.diagonal-section {
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-  margin-bottom: -5vw;
-  padding-bottom: 10rem !important;
-}
-
-.diagonal-inverse {
-  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
-  margin-top: -5vw;
-  padding-top: 10rem !important;
-}
+/* Diagonal Transition Utilities moved to App.css to support mobile responsiveness */
 
 .bg-light {
   background-color: var(--light-bg);

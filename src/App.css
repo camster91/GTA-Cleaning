@@ -20,10 +20,9 @@ main:focus {
 /* Reduced padding on mobile */
 @media (max-width: 768px) {
     section {
-        padding: 3rem 0; /* Removed !important */
+        padding: 2rem 0;
     }
 }
-
 
 /* Background image with overlay utility */
 .section-with-bg {
@@ -49,6 +48,32 @@ main:focus {
 .section-with-bg > * {
     position: relative;
     z-index: 2;
+}
+
+/* Diagonal Transition Utilities */
+.diagonal-section {
+  position: relative;
+  clip-path: none;
+  padding-bottom: 3rem !important;
+}
+
+.diagonal-inverse {
+  clip-path: none;
+  margin-top: 0;
+  padding-top: 3rem !important;
+}
+
+@media (min-width: 768px) {
+    .diagonal-section {
+      clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+      margin-bottom: -5vw;
+      padding-bottom: 10rem !important;
+    }
+    .diagonal-inverse {
+      clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+      margin-top: -5vw;
+      padding-top: 10rem !important;
+    }
 }
 
 /* Glassmorphism & Animations */
