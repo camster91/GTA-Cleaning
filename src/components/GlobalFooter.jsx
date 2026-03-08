@@ -35,10 +35,10 @@ const GlobalFooter = () => {
                     <div className="footer-col">
                         <h4>Services</h4>
                         <ul>
-                            <li><Link to="/services">Commercial Cleaning</Link></li>
-                            <li><Link to="/services">Post-Construction</Link></li>
-                            <li><Link to="/services">Floor Maintenance</Link></li>
-                            <li><Link to="/services">Specialty Services</Link></li>
+                            <li><Link to="/services/office-cleaning">Office Cleaning</Link></li>
+                            <li><Link to="/services/post-construction-cleaning">Post-Construction</Link></li>
+                            <li><Link to="/services/floor-maintenance">Floor Maintenance</Link></li>
+                            <li><Link to="/services/residential-cleaning">Residential Cleaning</Link></li>
                         </ul>
                     </div>
 
