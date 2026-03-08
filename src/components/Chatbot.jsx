@@ -8,6 +8,15 @@ const FAQ = {
   default: "I might need to jump in on that one personally. Would you like me to send a note to my team? Just say 'send email' and I'll make sure we get back to you."
 };
 
+// Advanced intent matching logic
+const getIntent = (text) => {
+  const t = text.toLowerCase();
+  if (/(quote|price|cost|estimate|money|how much)/.test(t)) return 'QUOTE';
+  if (/(service|what do you do|clean|offer|help)/.test(t)) return 'SERVICES';
+  if (/(human|person|speak|talk|real|agent|danny|send email)/.test(t)) return 'HUMAN';
+  return 'DEFAULT';
+};
+
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -15,7 +24,7 @@ const Chatbot = () => {
   ]);
   const [input, setInput] = useState('');
   const [email, setEmail] = useState('');
-  const [step, setStep] = useState('email'); // email, options, details
+  const [step, setStep] = useState('email'); 
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -33,27 +42,42 @@ const Chatbot = () => {
       setEmail(input);
       setStep('options');
       setMessages([...newMessages, { text: "Nice to meet you! How can I help you out? (Type: Quote, Services, or Send email)", sender: 'bot' }]);
-    } else if (step === 'options') {
-      if (input.toLowerCase().includes('quote')) {
+    } else {
+      const intent = getIntent(input);
+      
+      if (intent === 'QUOTE') {
         setStep('details');
         setMessages([...newMessages, { text: FAQ.quote, sender: 'bot' }]);
-      } else if (input.toLowerCase().includes('service')) {
+      } else if (intent === 'SERVICES') {
         setMessages([...newMessages, { text: FAQ.services, sender: 'bot' }]);
+      } else if (intent === 'HUMAN') {
+        // Human Handover
+        try {
+            await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name: 'Chatbot User', email, message: input, service: 'Chatbot Lead' })
+            });
+            setMessages([...newMessages, { text: "Got it! I've personally received your request and will follow up with you shortly.", sender: 'bot' }]);
+            setStep('options');
+          } catch (err) {
+            setMessages([...newMessages, { text: "I'm having a technical glitch. Could you call me directly at 647-901-1995?", sender: 'bot' }]);
+          }
+      } else if (step === 'details') {
+          // If we are already in the 'details' step, take the input as the message
+          try {
+            await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name: 'Chatbot User', email, message: input, service: 'Chatbot Lead' })
+            });
+            setMessages([...newMessages, { text: "Got it! I've personally received your request and will follow up with you shortly.", sender: 'bot' }]);
+            setStep('options');
+          } catch (err) {
+            setMessages([...newMessages, { text: "I'm having a technical glitch. Could you call me directly at 647-901-1995?", sender: 'bot' }]);
+          }
       } else {
         setMessages([...newMessages, { text: FAQ.default, sender: 'bot' }]);
-      }
-    } else if (step === 'details' || input.toLowerCase().includes('send email')) {
-      // Send the lead via existing contact API
-      try {
-        await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: 'Chatbot User', email, message: input, service: 'Chatbot Lead' })
-        });
-        setMessages([...newMessages, { text: "Got it! I've personally received your request and will follow up with you shortly.", sender: 'bot' }]);
-        setStep('options');
-      } catch (err) {
-        setMessages([...newMessages, { text: "I'm having a technical glitch. Could you call me directly at 647-901-1995?", sender: 'bot' }]);
       }
     }
   };
