@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 const SITE_NAME = 'GTA City Cleaning Services';
-const BASE_URL = 'https://gtacitycleaningservices.com';
+const BASE_URL = 'https://gtacitycleaningservices.ca';
 
 const SEO = ({
     title,
@@ -19,7 +19,7 @@ const SEO = ({
         "name": SITE_NAME,
         "image": `${BASE_URL}${image}`,
         "telephone": "647-901-1995",
-        "email": "GTACityCleaningServices@outlook.com",
+        "email": "contact@gtacitycleaningservices.ca",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Toronto",

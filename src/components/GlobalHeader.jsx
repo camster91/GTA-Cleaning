@@ -36,6 +36,7 @@ const GlobalHeader = () => {
                         <li><Link to="/about">About us</Link></li>
                         <li><Link to="/services">Services</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
+                        <li className="nav-phone"><a href="tel:6479011995" style={{ color: 'var(--primary-color)', fontWeight: '700' }}>647-901-1995</a></li>
                     </ul>
                 </nav>
 

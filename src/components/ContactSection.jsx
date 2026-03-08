@@ -90,7 +90,7 @@ const ContactSection = () => {
                             </div>
                             <div className="contact-info-text">
                                 <h4>Phone</h4>
-                                <p>(416) 000-0000</p>
+                                <p>647-901-1995</p>
                             </div>
                         </div>
                         <div className="contact-info-card">
@@ -99,7 +99,7 @@ const ContactSection = () => {
                             </div>
                             <div className="contact-info-text">
                                 <h4>Email</h4>
-                                <p>info@gtacitycleaning.com</p>
+                                <p>contact@gtacitycleaningservices.ca</p>
                             </div>
                         </div>
                         <div className="contact-info-card">
@@ -174,7 +174,7 @@ const ContactSection = () => {
                                     <input
                                         type="tel"
                                         id="phone"
-                                        placeholder="(416) 000-0000"
+                                        placeholder="647-901-1995"
                                         value={formData.phone}
                                         onChange={handleChange}
                                         aria-invalid={!!errors.phone}

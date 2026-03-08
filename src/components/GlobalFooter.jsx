@@ -16,6 +16,9 @@ const GlobalFooter = () => {
                     <p className="footer-desc">
                         Your trusted partner for cleaning across the GTA. Proudly serving Toronto, Mississauga, Bradford, North York, Scarborough, and surrounding areas with 18+ years of experience.
                     </p>
+                    <p className="footer-phone" style={{ fontWeight: '600', color: 'var(--white)' }}>
+                        Call us: <a href="tel:6479011995" style={{ color: 'var(--primary-color)' }}>647-901-1995</a>
+                    </p>
                 </div>
 
                 <div className="footer-links-grid">
