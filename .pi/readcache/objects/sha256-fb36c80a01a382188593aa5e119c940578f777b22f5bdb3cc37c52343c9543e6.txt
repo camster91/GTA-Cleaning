@@ -1,0 +1,104 @@
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-bg);
+    padding-top: 100px; /* Account for fixed header */
+}
+
+.hero-container {
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    color: var(--white);
+}
+
+.hero-subtitle {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.hero-heading {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #94A3B8;
+    margin-bottom: 3rem;
+    max-width: 90%;
+    line-height: 1.7;
+}
+
+.hero-btn {
+    margin-bottom: 4rem;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+}
+
+.hero-badges {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+}
+
+.badge {
+    display: flex;
+    flex-direction: column;
+}
+
+.badge strong {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: var(--font-main);
+    line-height: 1.2;
+}
+
+.badge span {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 0.75rem;
+}
+
+/* Desktop Overrides */
+@media (min-width: 992px) {
+    .hero-section {
+        min-height: 100vh;
+    }
+    
+    .hero-heading {
+        font-size: 4.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.25rem;
+    }
+
+    .hero-badges {
+        flex-wrap: nowrap;
+        gap: 4rem;
+        padding-top: 4rem;
+    }
+
+    .badge strong {
+        font-size: 2.5rem;
+    }
+}
