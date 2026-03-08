@@ -2,12 +2,16 @@ import './HeroSection.css';
 
 const HeroSection = () => {
     return (
-        <section className="hero-section diagonal-section" id="home">
-            <div className="hero-split left-panel">
+        <section 
+            className="hero-section diagonal-section section-with-bg" 
+            id="home"
+            style={{ backgroundImage: "url('/images/hero_floor.png')" }}
+        >
+            <div className="container hero-container">
                 <div className="hero-content animate-fade-in">
-                    <span className="hero-subtitle" style={{ color: 'rgba(255,255,255,0.7)', letterSpacing: '0.1em' }}>GTA CLEANING</span>
+                    <span className="hero-subtitle" style={{ color: 'var(--primary-color)', letterSpacing: '0.1em' }}>GTA CLEANING</span>
                     <h1 className="hero-heading" style={{ fontWeight: '500' }}>Your trusted<br />partner for commercial<br />cleaning</h1>
-                    <p className="hero-description" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.95rem', maxWidth: '400px' }}>
+                    <p className="hero-description" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem', maxWidth: '600px' }}>
                         Professional commercial cleaning services across the Greater Toronto Area. 18+ years of excellence keeping businesses pristine.
                     </p>
                     <a href="#contact" className="btn btn-primary hero-btn" style={{ borderRadius: '8px', padding: '0.8rem 2rem', fontWeight: '600' }}>
@@ -28,11 +32,7 @@ const HeroSection = () => {
                             <span>PROJECTS</span>
                         </div>
                     </div>
-                </div>              </div>
-
-            <div className="hero-split right-panel">
-                {/* Background image via CSS */}
-                <div className="hero-image-placeholder" role="img" aria-label="Professional commercial cleaning services"></div>
+                </div>
             </div>
         </section>
     );
