@@ -44,6 +44,16 @@ const GlobalHeader = () => {
                                 <li><Link to="/services/retail-cleaning">Retail Cleaning</Link></li>
                             </ul>
                         </li>
+                        <li className="has-dropdown">
+                            <Link to="#">Locations</Link>
+                            <ul className="dropdown">
+                                <li><Link to="/locations/toronto">Toronto</Link></li>
+                                <li><Link to="/locations/mississauga">Mississauga</Link></li>
+                                <li><Link to="/locations/bradford">Bradford</Link></li>
+                                <li><Link to="/locations/north-york">North York</Link></li>
+                                <li><Link to="/locations/scarborough">Scarborough</Link></li>
+                            </ul>
+                        </li>
                         <li><Link to="/contact">Contact</Link></li>
                         <li className="nav-phone"><a href="tel:6479011995" style={{ color: 'var(--primary-color)', fontWeight: '700' }}>647-901-1995</a></li>
                     </ul>
@@ -64,12 +74,18 @@ const GlobalHeader = () => {
                 <ul className="mobile-nav-links">
                     <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
                     <li><Link to="/about" onClick={() => setMobileMenuOpen(false)}>About us</Link></li>
-                    <li><Link to="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link></li>
+                    <li><strong style={{display: 'block', padding: '1rem 1.5rem'}}>Services</strong></li>
                     <li><Link to="/services/office-cleaning" onClick={() => setMobileMenuOpen(false)}>Office Cleaning</Link></li>
                     <li><Link to="/services/post-construction-cleaning" onClick={() => setMobileMenuOpen(false)}>Post-Construction</Link></li>
                     <li><Link to="/services/floor-maintenance" onClick={() => setMobileMenuOpen(false)}>Floor Maintenance</Link></li>
                     <li><Link to="/services/residential-cleaning" onClick={() => setMobileMenuOpen(false)}>Residential Cleaning</Link></li>
                     <li><Link to="/services/retail-cleaning" onClick={() => setMobileMenuOpen(false)}>Retail Cleaning</Link></li>
+                    <li><strong style={{display: 'block', padding: '1rem 1.5rem'}}>Service Areas</strong></li>
+                    <li><Link to="/locations/toronto" onClick={() => setMobileMenuOpen(false)}>Toronto</Link></li>
+                    <li><Link to="/locations/mississauga" onClick={() => setMobileMenuOpen(false)}>Mississauga</Link></li>
+                    <li><Link to="/locations/bradford" onClick={() => setMobileMenuOpen(false)}>Bradford</Link></li>
+                    <li><Link to="/locations/north-york" onClick={() => setMobileMenuOpen(false)}>North York</Link></li>
+                    <li><Link to="/locations/scarborough" onClick={() => setMobileMenuOpen(false)}>Scarborough</Link></li>
                     <li><Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
                 </ul>
             </div>
