@@ -149,10 +149,12 @@
     }
     
     .contact-card {
-        padding: 2rem 1rem;
+        padding: 1.5rem 1rem;
         border-radius: 6px;
         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
-        width: calc(100% - 0.5rem);
+        width: 100%;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
     }
 
     .contact-hero .hero-title {
