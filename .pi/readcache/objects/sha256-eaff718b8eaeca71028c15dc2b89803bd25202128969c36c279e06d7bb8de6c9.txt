@@ -3,7 +3,6 @@
     display: flex;
     align-items: center;
     background-color: var(--dark-bg);
-    padding-top: 100px; /* Account for fixed header */
 }
 
 .hero-container {

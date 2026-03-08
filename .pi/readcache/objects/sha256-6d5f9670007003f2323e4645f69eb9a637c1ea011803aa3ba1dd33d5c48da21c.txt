@@ -1,0 +1,201 @@
+.global-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all var(--transition-speed) ease;
+    padding: 0.5rem 0;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.global-header.scrolled {
+    padding: 0.25rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Lighter shadow on scroll */
+}
+
+.logo-img-wrapper {
+    width: 180px;
+    height: 70px;
+    background-color: transparent;
+    border-radius: 0; /* Removed border radius */
+    padding: 0; /* Removed padding */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-speed) ease;
+}
+
+.global-header.scrolled .logo-img-wrapper {
+    width: 140px;
+    height: 55px;
+    padding: 0; /* Removed padding */
+}
+
+.header-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo-brand-text {
+    display: none; /* Hide text since it's now part of the logo image */
+}
+
+@media (max-width: 768px) {
+    .logo-img-wrapper {
+        width: 140px;
+        height: 55px;
+        padding: 0;
+    }
+    
+    .global-header.scrolled .logo-img-wrapper {
+        width: 120px;
+        height: 45px;
+        padding: 0;
+    }
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+.logo-gta {
+    font-family: var(--font-main);
+    font-weight: 800;
+    font-size: 1.75rem;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--primary-color);
+}
+
+.logo-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    color: #94A3B8;
+    margin-top: 2px;
+}
+
+.desktop-nav {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem; /* Reduced from 3rem */
+}
+
+.nav-links a {
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.header-cta {
+    display: none;
+}
+
+.mobile-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--text-heading);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Mobile Menu Overlay - ONLY visible when open */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--nav-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    visibility: hidden;
+    /* Hide from layout when closed */
+}
+
+.mobile-nav.open {
+    right: 0;
+    visibility: visible;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Removing gap to rely on padding for touch targets */
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-nav-links li {
+    width: 100%;
+}
+
+.mobile-nav-links a {
+    display: block;
+    padding: 1.5rem;
+    color: var(--text-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.mobile-nav-links a:hover, .mobile-nav-links a:active {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.mobile-btn {
+    margin-top: 1rem;
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+    .desktop-nav {
+        display: block;
+    }
+
+    .header-cta {
+        display: block;
+    }
+
+    .mobile-toggle {
+        display: none;
+    }
+
+    .header-content {
+        padding: 0;
+    }
+}

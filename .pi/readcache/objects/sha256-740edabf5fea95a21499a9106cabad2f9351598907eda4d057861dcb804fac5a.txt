@@ -1,0 +1,33 @@
+import MeetTheOwner from '../components/MeetTheOwner';
+import HowItWorks from '../components/HowItWorks';
+import ContactSection from '../components/ContactSection';
+import MidPageBanner from '../components/MidPageBanner';
+import Testimonials from '../components/Testimonials';
+import ServicesGrid from '../components/ServicesGrid';
+import ValueProposition from '../components/ValueProposition';
+import HeroSection from '../components/HeroSection';
+import SEO from '../components/SEO';
+
+const Home = () => {
+    return (
+        <>
+            <SEO
+                title="Commercial & Residential Cleaning Services"
+                description="GTA City Cleaning Services provides 24/7 expert commercial, residential (move-in/move-out), post-construction, and floor maintenance cleaning across the Greater Toronto Area. 18+ years of excellence. Get a free quote today!"
+                path="/"
+            />
+            <HeroSection />
+            <ValueProposition />
+            <ServicesGrid />
+            <Testimonials />
+            <HowItWorks />
+            <div className="diagonal-inverse">
+                <MidPageBanner />
+            </div>
+            <MeetTheOwner />
+            <ContactSection />
+        </>
+    );
+};
+
+export default Home;
