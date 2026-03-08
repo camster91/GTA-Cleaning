@@ -77,23 +77,6 @@
     color: var(--white);
 }
 
-.logo-gta {
-    font-family: var(--font-main);
-    font-weight: 800;
-    font-size: 1.75rem;
-    line-height: 1;
-    letter-spacing: -0.05em;
-    color: var(--primary-color);
-}
-
-.logo-sub {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    font-weight: 500;
-    color: #94A3B8;
-    margin-top: 2px;
-}
-
 .desktop-nav {
     display: none;
 }
@@ -249,28 +232,4 @@
     .header-content {
         padding: 0;
     }
-}
-/* Mobile Submenu styles */
-.mobile-submenu-toggle {
-    display: block;
-    width: 100%;
-    padding: 1.5rem;
-    color: var(--text-heading);
-    font-size: 1.25rem;
-    font-weight: 600;
-    background: none;
-    border: none;
-    text-align: center;
-    cursor: pointer;
-}
-
-.mobile-submenu {
-    background-color: rgba(0, 0, 0, 0.03);
-    padding: 0.5rem 0;
-}
-
-.mobile-submenu li a {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    font-weight: 500;
 }

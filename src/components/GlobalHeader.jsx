@@ -73,6 +73,7 @@ const GlobalHeader = () => {
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     aria-label="Toggle menu"
                     aria-expanded={mobileMenuOpen}
+                    type="button"
                 >
                     {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
@@ -89,6 +90,7 @@ const GlobalHeader = () => {
                             onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                             aria-expanded={mobileServicesOpen}
                             aria-controls="services-submenu"
+                            type="button"
                         >
                             Services {mobileServicesOpen ? '▲' : '▼'}
                         </button>
@@ -108,6 +110,7 @@ const GlobalHeader = () => {
                             onClick={() => setMobileLocationsOpen(!mobileLocationsOpen)}
                             aria-expanded={mobileLocationsOpen}
                             aria-controls="locations-submenu"
+                            type="button"
                         >
                             Service Areas {mobileLocationsOpen ? '▲' : '▼'}
                         </button>
