@@ -8,19 +8,29 @@ const ContactForm = () => {
     const [errors, setErrors] = useState({});
     const [status, setStatus] = useState('idle');
 
-    const validate = () => {
+    const validate = (stepToValidate) => {
         const newErrors = {};
-        if (!formData.name.trim()) newErrors.name = 'Name is required.';
-        if (!formData.email.trim()) {
-            newErrors.email = 'Email is required.';
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            newErrors.email = 'Enter a valid email address.';
+        if (stepToValidate >= 1) {
+            if (!formData.name.trim()) newErrors.name = 'Name is required.';
+            if (!formData.email.trim()) {
+                newErrors.email = 'Email is required.';
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+                newErrors.email = 'Enter a valid email address.';
+            }
+            if (!formData.phone.trim()) newErrors.phone = 'Phone number is required.';
         }
-        if (!formData.phone.trim()) newErrors.phone = 'Phone number is required.';
-        if (!formData.service) newErrors.service = 'Please select a service.';
-        if (!formData.message.trim()) newErrors.message = 'Message is required.';
+        if (stepToValidate >= 2) {
+            if (!formData.service) newErrors.service = 'Please select a service.';
+            if (!formData.message.trim()) newErrors.message = 'Message is required.';
+        }
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
+    };
+
+    const handleNext = () => {
+        if (validate(1)) {
+            setStep(2);
+        }
     };
 
     const handleChange = (e) => {
@@ -31,7 +41,7 @@ const ContactForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!validate()) return;
+        if (!validate(2)) return;
 
         setStatus('sending');
         try {
@@ -97,7 +107,7 @@ const ContactForm = () => {
                                 {errors.phone && <span className="field-error">{errors.phone}</span>}
                             </div>
 
-                            <button type="button" className="btn btn-dark" onClick={() => setStep(2)}>Next</button>
+                            <button type="button" className="btn btn-dark" onClick={handleNext}>Next</button>
                         </>
                     )}
 

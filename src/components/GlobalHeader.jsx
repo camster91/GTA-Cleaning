@@ -72,6 +72,7 @@ const GlobalHeader = () => {
                     className="mobile-toggle"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     aria-label="Toggle menu"
+                    aria-expanded={mobileMenuOpen}
                 >
                     {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
@@ -83,11 +84,16 @@ const GlobalHeader = () => {
                     <li><Link to="/" onClick={closeAll}>Home</Link></li>
                     <li><Link to="/about" onClick={closeAll}>About us</Link></li>
                     <li>
-                        <button className="mobile-submenu-toggle" onClick={() => setMobileServicesOpen(!mobileServicesOpen)}>
+                        <button 
+                            className="mobile-submenu-toggle" 
+                            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                            aria-expanded={mobileServicesOpen}
+                            aria-controls="services-submenu"
+                        >
                             Services {mobileServicesOpen ? '▲' : '▼'}
                         </button>
                         {mobileServicesOpen && (
-                            <ul className="mobile-submenu">
+                            <ul className="mobile-submenu" id="services-submenu">
                                 <li><Link to="/services/office-cleaning" onClick={closeAll}>Office Cleaning</Link></li>
                                 <li><Link to="/services/post-construction-cleaning" onClick={closeAll}>Post-Construction</Link></li>
                                 <li><Link to="/services/floor-maintenance" onClick={closeAll}>Floor Maintenance</Link></li>
@@ -97,11 +103,16 @@ const GlobalHeader = () => {
                         )}
                     </li>
                     <li>
-                        <button className="mobile-submenu-toggle" onClick={() => setMobileLocationsOpen(!mobileLocationsOpen)}>
+                        <button 
+                            className="mobile-submenu-toggle" 
+                            onClick={() => setMobileLocationsOpen(!mobileLocationsOpen)}
+                            aria-expanded={mobileLocationsOpen}
+                            aria-controls="locations-submenu"
+                        >
                             Service Areas {mobileLocationsOpen ? '▲' : '▼'}
                         </button>
                         {mobileLocationsOpen && (
-                            <ul className="mobile-submenu">
+                            <ul className="mobile-submenu" id="locations-submenu">
                                 <li><Link to="/locations/toronto" onClick={closeAll}>Toronto</Link></li>
                                 <li><Link to="/locations/mississauga" onClick={closeAll}>Mississauga</Link></li>
                                 <li><Link to="/locations/bradford" onClick={closeAll}>Bradford</Link></li>
