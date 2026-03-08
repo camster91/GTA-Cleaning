@@ -4,10 +4,12 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: var(--nav-bg);
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transition: all var(--transition-speed) ease;
-    padding: 0.5rem 0; /* Reduced padding */
-    box-shadow: none; /* Removed drop shadow */
+    padding: 0.5rem 0;
+    box-shadow: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
