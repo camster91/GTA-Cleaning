@@ -22,7 +22,7 @@ const RetailCleaning = lazy(() => import('./pages/services/RetailCleaning'));
 const Blog = lazy(() => import('./pages/Blog'));
 
 import StickyCTA from './components/StickyCTA';
-
+import Chatbot from './components/Chatbot';
 import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
@@ -55,6 +55,7 @@ function App() {
         <GlobalFooter />
         <BackToTop />
         <StickyCTA />
+        <Chatbot />
       </div>
     </Router>
   );
