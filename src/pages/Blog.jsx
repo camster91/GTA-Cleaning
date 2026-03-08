@@ -1,6 +1,7 @@
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
-import './Blog.css';
+// import './Blog.css'; // Removed as file does not exist
+
 
 const posts = [
   { id: 1, title: 'How to Prepare Your Home for Move-out', excerpt: 'Expert tips for a hassle-free move-out clean.', date: 'Mar 8, 2026' },
