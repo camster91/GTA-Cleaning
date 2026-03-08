@@ -137,6 +137,12 @@
 }
 
 /* Responsive */
+@media (max-width: 991px) {
+    .global-footer {
+        padding-bottom: 5rem; /* Ensure footer links are not covered by sticky CTA */
+    }
+}
+
 @media (min-width: 768px) {
     .footer-links-grid {
         grid-template-columns: repeat(4, 1fr);
