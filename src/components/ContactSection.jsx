@@ -148,6 +148,7 @@ const ContactSection = () => {
                                         aria-invalid={!!errors.name}
                                         aria-describedby={errors.name ? 'name-error' : undefined}
                                         required
+                                        autoComplete="name"
                                     />
                                     {errors.name && <span className="field-error" id="name-error" role="alert">{errors.name}</span>}
                                 </div>
@@ -163,6 +164,7 @@ const ContactSection = () => {
                                         aria-invalid={!!errors.email}
                                         aria-describedby={errors.email ? 'email-error' : undefined}
                                         required
+                                        autoComplete="email"
                                     />
                                     {errors.email && <span className="field-error" id="email-error" role="alert">{errors.email}</span>}
                                 </div>
@@ -178,6 +180,7 @@ const ContactSection = () => {
                                         aria-invalid={!!errors.phone}
                                         aria-describedby={errors.phone ? 'phone-error' : undefined}
                                         required
+                                        autoComplete="tel"
                                     />
                                     {errors.phone && <span className="field-error" id="phone-error" role="alert">{errors.phone}</span>}
                                 </div>
