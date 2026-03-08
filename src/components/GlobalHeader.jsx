@@ -6,6 +6,8 @@ import './GlobalHeader.css';
 const GlobalHeader = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+    const [mobileLocationsOpen, setMobileLocationsOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -14,6 +16,12 @@ const GlobalHeader = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const closeAll = () => {
+        setMobileMenuOpen(false);
+        setMobileServicesOpen(false);
+        setMobileLocationsOpen(false);
+    };
 
     return (
         <header className={`global-header ${isScrolled ? 'scrolled' : ''}`}>
@@ -72,21 +80,37 @@ const GlobalHeader = () => {
             {/* Mobile Navigation */}
             <div className={`mobile-nav ${mobileMenuOpen ? 'open' : ''}`}>
                 <ul className="mobile-nav-links">
-                    <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
-                    <li><Link to="/about" onClick={() => setMobileMenuOpen(false)}>About us</Link></li>
-                    <li><strong style={{display: 'block', padding: '1rem 1.5rem'}}>Services</strong></li>
-                    <li><Link to="/services/office-cleaning" onClick={() => setMobileMenuOpen(false)}>Office Cleaning</Link></li>
-                    <li><Link to="/services/post-construction-cleaning" onClick={() => setMobileMenuOpen(false)}>Post-Construction</Link></li>
-                    <li><Link to="/services/floor-maintenance" onClick={() => setMobileMenuOpen(false)}>Floor Maintenance</Link></li>
-                    <li><Link to="/services/residential-cleaning" onClick={() => setMobileMenuOpen(false)}>Residential Cleaning</Link></li>
-                    <li><Link to="/services/retail-cleaning" onClick={() => setMobileMenuOpen(false)}>Retail Cleaning</Link></li>
-                    <li><strong style={{display: 'block', padding: '1rem 1.5rem'}}>Service Areas</strong></li>
-                    <li><Link to="/locations/toronto" onClick={() => setMobileMenuOpen(false)}>Toronto</Link></li>
-                    <li><Link to="/locations/mississauga" onClick={() => setMobileMenuOpen(false)}>Mississauga</Link></li>
-                    <li><Link to="/locations/bradford" onClick={() => setMobileMenuOpen(false)}>Bradford</Link></li>
-                    <li><Link to="/locations/north-york" onClick={() => setMobileMenuOpen(false)}>North York</Link></li>
-                    <li><Link to="/locations/scarborough" onClick={() => setMobileMenuOpen(false)}>Scarborough</Link></li>
-                    <li><Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
+                    <li><Link to="/" onClick={closeAll}>Home</Link></li>
+                    <li><Link to="/about" onClick={closeAll}>About us</Link></li>
+                    <li>
+                        <button className="mobile-submenu-toggle" onClick={() => setMobileServicesOpen(!mobileServicesOpen)}>
+                            Services {mobileServicesOpen ? '▲' : '▼'}
+                        </button>
+                        {mobileServicesOpen && (
+                            <ul className="mobile-submenu">
+                                <li><Link to="/services/office-cleaning" onClick={closeAll}>Office Cleaning</Link></li>
+                                <li><Link to="/services/post-construction-cleaning" onClick={closeAll}>Post-Construction</Link></li>
+                                <li><Link to="/services/floor-maintenance" onClick={closeAll}>Floor Maintenance</Link></li>
+                                <li><Link to="/services/residential-cleaning" onClick={closeAll}>Residential Cleaning</Link></li>
+                                <li><Link to="/services/retail-cleaning" onClick={closeAll}>Retail Cleaning</Link></li>
+                            </ul>
+                        )}
+                    </li>
+                    <li>
+                        <button className="mobile-submenu-toggle" onClick={() => setMobileLocationsOpen(!mobileLocationsOpen)}>
+                            Service Areas {mobileLocationsOpen ? '▲' : '▼'}
+                        </button>
+                        {mobileLocationsOpen && (
+                            <ul className="mobile-submenu">
+                                <li><Link to="/locations/toronto" onClick={closeAll}>Toronto</Link></li>
+                                <li><Link to="/locations/mississauga" onClick={closeAll}>Mississauga</Link></li>
+                                <li><Link to="/locations/bradford" onClick={closeAll}>Bradford</Link></li>
+                                <li><Link to="/locations/north-york" onClick={closeAll}>North York</Link></li>
+                                <li><Link to="/locations/scarborough" onClick={closeAll}>Scarborough</Link></li>
+                            </ul>
+                        )}
+                    </li>
+                    <li><Link to="/contact" onClick={closeAll}>Contact</Link></li>
                 </ul>
             </div>
         </header>

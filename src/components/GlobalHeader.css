@@ -207,8 +207,29 @@
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.mobile-btn {
-    margin-top: 1rem;
+/* Mobile Submenu styles */
+.mobile-submenu-toggle {
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    color: var(--text-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    background: none;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mobile-submenu {
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 0.5rem 0;
+}
+
+.mobile-submenu li a {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 /* Desktop Styles */
@@ -228,4 +249,28 @@
     .header-content {
         padding: 0;
     }
+}
+/* Mobile Submenu styles */
+.mobile-submenu-toggle {
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    color: var(--text-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    background: none;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mobile-submenu {
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 0.5rem 0;
+}
+
+.mobile-submenu li a {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
